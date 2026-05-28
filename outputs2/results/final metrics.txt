@@ -1,0 +1,6 @@
+===== FINAL TEST RESULTS =====
+
+IoU Score       : 0.2092
+Precision Score : 0.2907
+Recall Score    : 0.4275
+F1 Score        : 0.3460
