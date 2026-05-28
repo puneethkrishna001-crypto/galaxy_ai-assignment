@@ -248,10 +248,76 @@ Galaxy-ai-assignment/
 ```bash
 git clone <your-repo-link>
 cd Galaxy-ai-assignment
+```
 
+## Install Dependencies
 
+```bash
+pip install -r requirements.txt
+```
 
+---
 
+# Usage
 
+## Training
 
+```bash
+python train.py
+```
 
+## Evaluation
+
+```bash
+python eval.py
+```
+
+## Inference
+
+```bash
+python inference.py
+```
+
+Generated predictions are saved in:
+
+```
+outputs/predictions/
+```
+
+---
+
+# Future Improvements
+
+Potential future enhancements include:
+
+- Attention-based feature fusion
+- Transformer-based encoders
+- Multi-scale segmentation
+- Advanced augmentation pipeline
+- Better SAR denoising
+- Domain adaptation techniques
+- Improved no-data masking
+
+---
+
+# Key Learnings
+
+This project provided hands-on experience in:
+
+- Remote sensing AI
+- EO-SAR multimodal fusion
+- Semantic segmentation
+- Change detection
+- Dataset imbalance handling
+- Failure analysis
+- Model evaluation
+- Deep learning pipeline engineering
+
+---
+
+# Author
+
+**Puneeth Krishna**
+
+B.Tech Civil Engineering
+NITK Surathkal
