@@ -39,21 +39,21 @@ This is a challenging multimodal remote sensing problem because EO and SAR image
 
 # Dataset Structure
 
+```
 data/
 ├── train/
 │   ├── pre-event/
 │   ├── post-event/
 │   └── target/
-│
 ├── val/
 │   ├── pre-event/
 │   ├── post-event/
 │   └── target/
-│
 └── test/
     ├── pre-event/
     ├── post-event/
     └── target/
+```
 
 ### Data Modalities
 
@@ -71,24 +71,25 @@ The project uses a Siamese U-Net architecture with a shared ResNet18 encoder.
 
 ## Pipeline
 
-Pre-event EO Image
-        ↓
-Shared Encoder
-        ↓
-Feature Extraction
-
-Post-event SAR Image
-        ↓
-Shared Encoder
-        ↓
-Feature Extraction
-
-        ↓
-Feature Difference
-        ↓
-U-Net Decoder
-        ↓
-Binary Change Mask
+```
+Pre-event EO Image              Post-event SAR Image
+        │                               │
+        └────────────┬──────────────────┘
+                     │
+              Shared Encoder
+                     │
+         ┌───────────┴───────────┐
+         │                       │
+    Feature Map 1          Feature Map 2
+         │                       │
+         └───────────┬───────────┘
+                     │
+            Feature Difference
+                     │
+              U-Net Decoder
+                     │
+           Binary Change Mask
+```
 
 ### Why Siamese U-Net?
 
@@ -205,39 +206,37 @@ The repository includes:
 - EO inputs
 - SAR inputs
 
-inside:
+All outputs are stored in:
 
+```
 outputs/predictions/
+```
 
 ---
 
 # Project Structure
 
-Galaxy-ai-assignment/
-│
+```
+galaxy_ai-assignment/
 ├── datasets/
 │   ├── __init__.py
 │   └── change_dataset.py
-│
 ├── models/
 │   └── siamese_unet.py
-│
 ├── utils/
 │   └── losses.py
-│
 ├── outputs/
 │   ├── checkpoints/
 │   ├── predictions/
 │   └── results/
-│
 ├── notebooks/
-│
 ├── train.py
 ├── eval.py
 ├── inference.py
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
 
 ---
 
@@ -247,7 +246,7 @@ Galaxy-ai-assignment/
 
 ```bash
 git clone <your-repo-link>
-cd Galaxy-ai-assignment
+cd galaxy_ai-assignment
 ```
 
 ## Install Dependencies
